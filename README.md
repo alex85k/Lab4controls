@@ -119,7 +119,7 @@ Lab4controls
      {
         base.OnMouseClick(e);
         //  проверьте, что кликнули внутрь таблицы, а не мимо
-        CellClick(this, e.Y / cellSize, e.X / cellSize);
+        if (CellClick!=null) CellClick(this, e.Y / cellSize, e.X / cellSize);
      }
      ```
      
@@ -146,7 +146,8 @@ Lab4controls
     
     - инициализируйте ``Colors`` в конструкторе (5 произвольных цветов)
     - убедитесь, что дизайнер позволяет редактировать цвета и выбирать ``DisplayMode``
-    - в функции On_Paint в зависимости от DisplayMode рисуйте закрашенный прямоугольник (FillRect, цвет ``Colors[data[i,j]]``, текст, или вместе
+    - в функции On_Paint в зависимости от DisplayMode рисуйте закрашенный прямоугольник (FillRectangle, цвет ``Colors[data[i,j]]``), текст, или вместе
+    - функции FillRectangle нужен объект Brush, его можно создать из цвета ``new SolidBrush(c)`` (можно ввести вспомогательный ма
 
 9. Добавьте на форму переключатель режимов - ComboBox. Его элеметнами (Items) в конструкторе назначьте ``Grid.GridDisplayMode.Colors`` и остальные 2 режима (это объекты).
      - обработчиком события ``SelectedIndexChanged`` для ``сomboBox1`` сделайте функцию с опреаторами
