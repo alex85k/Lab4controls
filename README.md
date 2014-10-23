@@ -37,7 +37,7 @@ Lab4controls
     - Если Crossed изменяется при присваивании, нужно вызвать ``Invalidate`` (потребовать перерисовки чуть позже).
 
     ```c#
-          bool c;
+    bool c;
     public bool Crossed
     {
       get { return c; }
@@ -49,14 +49,20 @@ Lab4controls
 Задание
 =======
 
-1. Добавить пользовательский компонент ``Grid`` (оставить наследником класса ``Control``)
+1. Добавьте пользовательский компонент ``Grid`` (оставить наследником класса ``Control``)
 2. Сначала компонент должен рисовать сетку из линий заданного размера
   - введите свойства ``RowCount``, ``ColumnCount``, ``CellSize``
 
      ```c#
-     int r;
-     public int RowCount { get { return r; } set { (проверки) r=value (Invalidate(), если нужно) }
+     int rows=5, cols=3, cellSize=30;
+     public int RowCount { get { return rows; } set { (проверки) rows=value (Invalidate(), если нужно) }
      ```
 
   - в функции ``OnPaint`` добавить рисование сетки (шаг равен ``CellSize`` точек, количество горизонтальных линий определяется ``ColumnCount``, вертикальных - ``RowCount``. Используется функция ``DrawLine``, объект ``Pen`` можно сделать полем класса ``Grid``.
+ 
+3. Добавить чуть более сложное свойство - цвет линии.
+    ```c#
+    Pen p = new Pen(  .... )
+    public Color LineColor { использовать p.Color }
+    ```
 
