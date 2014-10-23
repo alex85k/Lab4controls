@@ -157,7 +157,7 @@ Lab4controls
         ...
         ```
 
-     - обработчиком события ``SelectedIndexChanged`` для ``сomboBox1`` сделайте функцию с опреаторами
+     - обработчиком события ``SelectedIndexChanged`` для ``сomboBox1`` сделайте функцию с операторами
          
          ```c#
          grid1.DisplayMode = (Grid.GridDisplayMode) comboBox1.SelectedItem;
