@@ -95,3 +95,29 @@ Lab4controls
        ```
 
 5. Добавьте событие реакции на нажатие мыши. Должно порождаться событие, аргументом которого будет положение ячейки.
+     - добавьте тип события (делегат) к классу Grid:
+     
+     ```c#
+     public delegate void CellHandler(Object sender, int row, int column);
+     ```
+     
+     - объявите событие:
+     
+     ```c#
+     public event CellHandler CellClick;
+     ```
+     
+     (событие появится в таблице дизайнера)
+     
+     - Переопределим функцию обработки нажатия мыши у класса Grid и вызовем в ней событие
+     
+     ```c#
+     protected override void OnMouseClick(MouseEventArgs e)
+     {
+        base.OnMouseClick(e);
+
+        CellClick(this, e.Y / cellSize, e.X / cellSize);
+     }
+     ```
+     
+6. Добавьте обработчик события, заменяющий число в нажатой ячейке на случайное.
