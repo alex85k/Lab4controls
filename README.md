@@ -73,8 +73,9 @@ Lab4controls
 3. Добавьте чуть более сложное свойство - цвет линии.
     
     ```c#
-    Pen p = new Pen(  .... )
-    public Color LineColor { использовать p.Color }
+    Pen p = new Pen(  .... ) // это поле класса Grid с каким-то значением по умолчанию
+    public Color LineColor { get{return ?; } set { ...if....value...} } // предоставить доступ для чтения и изменения p.Color
+    // в OnPaint используем поле Pen для типа линии
     ```
 
 4. Следующая цель - печать чисел в ячейках.
